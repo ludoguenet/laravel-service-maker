@@ -13,7 +13,9 @@ and implements the `app/Services/Contracts/CreateUserContract.php` which is gene
 
 ## Contracts
 
-If you do not need any contract with your service. Then turn the **with_interface** value to false in the config file.
+If for a specific service you don't need a contract, you can add the `--noContract` option flag to the the command.
+
+If for some reason you do not need any contract with all your services, then turn the **with_interface** value to false in the config file.
 
 ## Installation
 
