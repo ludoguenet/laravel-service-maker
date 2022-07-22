@@ -8,7 +8,7 @@ This tiny package will generate services and their contracts for saving time whi
 
 The command `php artisan make:service CreateUser` creates two files.
 
-The first will be located as `app/Services/CreateUser/CreateUserService.php`
+The first one will be located as `app/Services/CreateUser/CreateUserService.php`
 and implements the `app/Services/Contracts/CreateUserContract.php` which is generated too.
 
 ## Contracts
@@ -27,6 +27,14 @@ You can publish the config file with:
 
 ```bash
 php artisan vendor:publish --tag="service-maker-config"
+```
+
+This is the contents of the published config file:
+
+```php
+return [
+    'with_interface' => true,
+];
 ```
 
 ## Credits
