@@ -26,11 +26,6 @@ final class CreateServiceContractCommand extends GeneratorCommand
      */
     protected function getDefaultNamespace($rootNamespace): string
     {
-        $serviceName = str(
-                string: $this->argument('name')
-            )
-            ->ucfirst();
-
         return "{$rootNamespace}\\Services\\Contracts";
     }
 
