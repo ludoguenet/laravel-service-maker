@@ -1,17 +1,17 @@
 {
-    "name": ":vendor_slug/:package_slug",
-    "description": ":package_description",
+    "name": "nordcoders/laravel-service-maker",
+    "description": "Generate automatically services and their interface to make your Controllers thin.",
     "keywords": [
-        ":vendor_name",
+        "nordcoders",
         "laravel",
-        ":package_slug"
+        "laravel-service-maker"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/nordcoders/laravel-service-maker",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "Ludovic Guénet",
+            "email": "ludovicguenet@gmx.com",
             "role": "Developer"
         }
     ],
@@ -35,13 +35,13 @@
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories"
+            "NordCoders\\LaravelServiceMaker\\": "src",
+            "NordCoders\\LaravelServiceMaker\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests"
+            "NordCoders\\LaravelServiceMaker\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -56,10 +56,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
+                "NordCoders\\LaravelServiceMaker\\LaravelServiceMakerServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\Facades\\Skeleton"
+                "LaravelServiceMaker": "NordCoders\\LaravelServiceMaker\\Facades\\LaravelServiceMaker"
             }
         }
     },
