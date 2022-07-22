@@ -2,15 +2,11 @@
 
 namespace NordCoders\LaravelServiceMaker;
 
-use NordCoders\LaravelServiceMaker\Commands\LaravelServiceMakerCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-<<<<<<< HEAD
 use NordCoders\LaravelServiceMaker\Commands\LaravelServiceMakerCommand;
 use NordCoders\LaravelServiceMaker\Commands\Files\CreateServiceFileCommand;
 use NordCoders\LaravelServiceMaker\Commands\Files\CreateServiceContractCommand;
-=======
->>>>>>> 21a92e4186f0de4fdec978112f8d3d5deee4d676
 
 class LaravelServiceMakerServiceProvider extends PackageServiceProvider
 {
