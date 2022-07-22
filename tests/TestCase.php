@@ -3,8 +3,8 @@
 namespace NordCoders\LaravelServiceMaker\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Orchestra\Testbench\TestCase as Orchestra;
 use NordCoders\LaravelServiceMaker\LaravelServiceMakerServiceProvider;
+use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
 {
