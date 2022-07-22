@@ -13,14 +13,14 @@ and implements the `app/Services/Contracts/CreateUserContract.php` which is gene
 
 ## Contracts
 
-If you do not need contracts implemented with your services. Then switch the **with_interface** value to false in the config file.
+If you do not need any contract with your service. Then turn the **with_interface** value to false in the config file.
 
 ## Installation
 
 You can install the package via composer:
 
 ```bash
-composer require nordcoders/laravel-services
+composer require nordcoders/laravel-service-maker
 ```
 
 You can publish the config file with:
