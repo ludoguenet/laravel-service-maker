@@ -5,21 +5,18 @@ namespace NordCoders\LaravelServiceMaker;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 use NordCoders\LaravelServiceMaker\Commands\LaravelServiceMakerCommand;
+use NordCoders\LaravelServiceMaker\Commands\Files\CreateServiceFileCommand;
+use NordCoders\LaravelServiceMaker\Commands\Files\CreateServiceContractCommand;
 
 class LaravelServiceMakerServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {
-        /*
-         * This class is a Package Service Provider
-         *
-         * More info: https://github.com/spatie/laravel-package-tools
-         */
         $package
             ->name('laravel-service-maker')
-            ->hasConfigFile()
-            ->hasViews()
-            ->hasMigration('create_laravel-service-maker_table')
-            ->hasCommand(LaravelServiceMakerCommand::class);
+            ->hasConfigFile('service-maker')
+            ->hasCommand(LaravelServiceMakerCommand::class)
+            ->hasCommand(CreateServiceFileCommand::class)
+            ->hasCommand(CreateServiceContractCommand::class);
     }
 }

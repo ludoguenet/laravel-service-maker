@@ -6,13 +6,34 @@ use Illuminate\Console\Command;
 
 class LaravelServiceMakerCommand extends Command
 {
-    public $signature = 'laravel-service-maker';
+    /**
+     * @var string
+     */
+    protected $signature = 'make:service {name : The name of the service you want to create.}';
 
-    public $description = 'My command';
+    /**
+     * @var string
+     */
+    protected $description = 'Create a service implementing its own interface.';
+
+    /**
+     * @var string
+     */
+    protected $type = 'Service';
 
     public function handle(): int
     {
-        $this->comment('All done');
+        $this->call('make:servicefile', [
+            'name' => $this->argument('name'),
+        ]);
+
+        if (config('service-maker.with_interface')) {
+            $this->call('make:servicecontractfile', [
+                'name' => $this->argument('name'),
+            ]);
+        }
+
+        $this->comment('Service files created with success!');
 
         return self::SUCCESS;
     }
