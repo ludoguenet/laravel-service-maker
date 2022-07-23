@@ -2,14 +2,24 @@
 
 namespace NordCoders\LaravelServiceMaker;
 
-use NordCoders\LaravelServiceMaker\Commands\Files\CreateServiceContractCommand;
-use NordCoders\LaravelServiceMaker\Commands\Files\CreateServiceFileCommand;
-use NordCoders\LaravelServiceMaker\Commands\LaravelServiceMakerCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
+use NordCoders\LaravelServiceMaker\Actions\CreateServiceFileAction;
+use NordCoders\LaravelServiceMaker\Commands\LaravelServiceMakerCommand;
+use NordCoders\LaravelServiceMaker\Actions\CreateServiceContractFileAction;
+use NordCoders\LaravelServiceMaker\Contracts\CreateServiceFileActionContract;
+use NordCoders\LaravelServiceMaker\Commands\Files\Service\CreateServiceFileCommand;
+use NordCoders\LaravelServiceMaker\Contracts\CreateServiceContractFileActionContract;
+use NordCoders\LaravelServiceMaker\Commands\Files\Contract\CreateServiceContractCommand;
+use NordCoders\LaravelServiceMaker\Commands\Files\Service\CreateServiceFileWithNoContractCommand;
 
 class LaravelServiceMakerServiceProvider extends PackageServiceProvider
 {
+    public array $bindings = [
+        CreateServiceFileActionContract::class => CreateServiceFileAction::class,
+        CreateServiceContractFileActionContract::class => CreateServiceContractFileAction::class,
+    ];
+
     public function configurePackage(Package $package): void
     {
         $package
@@ -17,6 +27,7 @@ class LaravelServiceMakerServiceProvider extends PackageServiceProvider
             ->hasConfigFile('service-maker')
             ->hasCommand(LaravelServiceMakerCommand::class)
             ->hasCommand(CreateServiceFileCommand::class)
+            ->hasCommand(CreateServiceFileWithNoContractCommand::class)
             ->hasCommand(CreateServiceContractCommand::class);
     }
 }

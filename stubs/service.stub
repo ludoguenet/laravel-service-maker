@@ -1,8 +1,0 @@
-<?php
-
-namespace {{ namespace }};
-{{ contractNamespace }}
-class {{ class }} {{ contract }}
-{
-    //
-}

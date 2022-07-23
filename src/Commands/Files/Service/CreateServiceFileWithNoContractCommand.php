@@ -1,23 +1,23 @@
 <?php
 
-namespace NordCoders\LaravelServiceMaker\Commands\Files;
+namespace NordCoders\LaravelServiceMaker\Commands\Files\Service;
 
 use Illuminate\Console\GeneratorCommand;
 use Illuminate\Support\Str;
 
-final class CreateServiceFileCommand extends GeneratorCommand
+final class CreateServiceFileWithNoContractCommand extends GeneratorCommand
 {
     /**
      * @var string
      */
-    protected $name = 'make:servicefile {name}';
+    protected $name = 'make:servicewithnocontract';
 
     /**
      * @return string
      */
     protected function getStub(): string
     {
-        return __DIR__.'/../../../stubs/service.stub';
+        return __DIR__.'/../../../../stubs/service-without-contract.stub';
     }
 
     /**
@@ -63,17 +63,10 @@ final class CreateServiceFileCommand extends GeneratorCommand
     {
         $serviceName = "{$name}Service";
         $class = str_replace($this->getNamespace($serviceName).'\\', '', $serviceName);
-        $contractName = str_replace($this->getNamespace($serviceName).'\\', '', $name).'Contract';
-        $contractNamespace = $this->rootNamespace()."Services\\Contracts\\{$contractName}";
 
         $replace = [
-            'DummyClass' => $class,
             '{{ class }}' => $class,
             '{{class}}' => $class,
-            '{{ contract }}' => config('service-maker.with_interface') ? 'implements '.$contractName : '',
-            '{{contract}}' => config('service-maker.with_interface') ? 'implements '.$contractName : '',
-            '{{ contractNamespace }}' => config('service-maker.with_interface') ? "\n"."use {$contractNamespace}; \n" : '',
-            '{{contractNamespace}}' => config('service-maker.with_interface') ? "\n"."use {$contractNamespace}; \n" : '',
         ];
 
         return str_replace(array_keys($replace), array_values($replace), $stub);

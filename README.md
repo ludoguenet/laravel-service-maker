@@ -6,14 +6,16 @@ This tiny package will generate services and their contracts for saving time whi
 
 ## Example
 
-The command `php artisan make:service CreateUser` creates two files.
+The command `php artisan make:service CreateUser {--noContract}` creates two files.
 
 The first one will be located as `app/Services/CreateUser/CreateUserService.php`
 and implements the `app/Services/Contracts/CreateUserContract.php` which is generated too.
 
 ## Contracts
 
-If you do not need any contract with your service. Then turn the **with_interface** value to false in the config file.
+If you don't want a contract implemented with the service created, use the option `--noContract`.
+
+If you never need any contracts. Then turn the **with_interface** value to false in the config file.
 
 ## Installation
 

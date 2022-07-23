@@ -3,13 +3,15 @@
 namespace NordCoders\LaravelServiceMaker\Commands;
 
 use Illuminate\Console\Command;
+use NordCoders\LaravelServiceMaker\Contracts\CreateServiceFileActionContract;
+use NordCoders\LaravelServiceMaker\Contracts\CreateServiceContractFileActionContract;
 
 class LaravelServiceMakerCommand extends Command
 {
     /**
      * @var string
      */
-    protected $signature = 'make:service {name : The name of the service you want to create.}';
+    protected $signature = 'make:service {name : The name of the service you want to create.} {--noContract : The service must not implement a contract}';
 
     /**
      * @var string
@@ -21,17 +23,22 @@ class LaravelServiceMakerCommand extends Command
      */
     protected $type = 'Service';
 
-    public function handle(): int
+    public function handle(
+        CreateServiceFileActionContract $createServiceFileAction,
+        CreateServiceContractFileActionContract $createServiceContractFileAction
+    ): int
     {
-        $this->call('make:servicefile', [
-            'name' => $this->argument('name'),
-        ]);
+        $createServiceFileAction->handle(
+            serviceName: $this->argument('name'),
+            noContract: $this->option('noContract'),
+            serviceMakerCommand: $this,
+        );
 
-        if (config('service-maker.with_interface')) {
-            $this->call('make:servicecontractfile', [
-                'name' => $this->argument('name'),
-            ]);
-        }
+        $createServiceContractFileAction->handle(
+            serviceName: $this->argument('name'),
+            noContract: $this->option('noContract'),
+            serviceMakerCommand: $this,
+        );
 
         $this->comment('Service files created with success!');
 

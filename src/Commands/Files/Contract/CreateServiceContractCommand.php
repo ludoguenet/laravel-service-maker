@@ -1,6 +1,6 @@
 <?php
 
-namespace NordCoders\LaravelServiceMaker\Commands\Files;
+namespace NordCoders\LaravelServiceMaker\Commands\Files\Contract;
 
 use Illuminate\Console\GeneratorCommand;
 use Illuminate\Support\Str;
@@ -10,14 +10,14 @@ final class CreateServiceContractCommand extends GeneratorCommand
     /**
      * @var string
      */
-    protected $name = 'make:servicecontractfile {name}';
+    protected $name = 'make:servicecontractfile';
 
     /**
      * @return string
      */
     protected function getStub(): string
     {
-        return __DIR__.'/../../../stubs/servicecontract.stub';
+        return __DIR__.'/../../../../stubs/service-contract.stub';
     }
 
     /**
