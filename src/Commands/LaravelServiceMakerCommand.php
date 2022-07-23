@@ -29,7 +29,7 @@ class LaravelServiceMakerCommand extends Command
 
         ]);
 
-        if (config('service-maker.with_interface') || $this->option('noContract')) {
+        if (config('service-maker.with_interface') || !$this->option('noContract')) {
             $this->call('make:servicecontractfile', [
                 'name' => $this->argument('name'),
             ]);
