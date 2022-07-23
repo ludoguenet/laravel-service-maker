@@ -14,7 +14,6 @@ class CreateServiceFileAction implements CreateServiceFileActionContract
         string $noContract,
         Command $serviceMakerCommand,
     ): void {
-
         if ($noContract) {
             $this->withNoContract(
                 serviceName: $serviceName,
@@ -29,6 +28,7 @@ class CreateServiceFileAction implements CreateServiceFileActionContract
                 serviceName: $serviceName,
                 serviceMakerCommand: $serviceMakerCommand,
             );
+
             return;
         }
 
@@ -37,20 +37,19 @@ class CreateServiceFileAction implements CreateServiceFileActionContract
             serviceMakerCommand: $serviceMakerCommand,
         );
 
-        return;
     }
 
     protected function withContract(string $serviceName, Command $serviceMakerCommand): void
     {
         $serviceMakerCommand->call('make:servicefile', [
-            'name' => $serviceName
+            'name' => $serviceName,
         ]);
     }
 
     protected function withNoContract(string $serviceName, Command $serviceMakerCommand): void
     {
         $serviceMakerCommand->call('make:servicewithnocontract', [
-            'name' => $serviceName
+            'name' => $serviceName,
         ]);
     }
 }

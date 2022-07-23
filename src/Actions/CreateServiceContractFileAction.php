@@ -28,9 +28,10 @@ class CreateServiceContractFileAction implements CreateServiceContractFileAction
         }
     }
 
-    protected function generateContract(string $serviceName, Command $serviceMakerCommand) {
+    protected function generateContract(string $serviceName, Command $serviceMakerCommand)
+    {
         $serviceMakerCommand->call('make:servicecontractfile', [
-            'name' => $serviceName
+            'name' => $serviceName,
         ]);
     }
 }

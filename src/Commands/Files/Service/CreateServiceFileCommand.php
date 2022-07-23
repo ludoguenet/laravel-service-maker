@@ -72,7 +72,7 @@ final class CreateServiceFileCommand extends GeneratorCommand
             '{{ contract }}' => $contractName,
             '{{contract}}' => $contractName,
             '{{ contractNamespace }}' => $contractNamespace,
-            '{{contractNamespace}}' =>  $contractNamespace,
+            '{{contractNamespace}}' => $contractNamespace,
         ];
 
         return str_replace(array_keys($replace), array_values($replace), $stub);
