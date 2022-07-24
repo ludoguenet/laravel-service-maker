@@ -2,7 +2,7 @@
 
 use function Pest\Laravel\artisan;
 
-it('returns a successful response when make:service command is executed', function () {
+it('returns a successful response when make:service command is executed without option', function () {
     artisan('make:service CreateUser')->assertExitCode(1);
 });
 
