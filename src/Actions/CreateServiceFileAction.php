@@ -36,7 +36,6 @@ class CreateServiceFileAction implements CreateServiceFileActionContract
             serviceName: $serviceName,
             serviceMakerCommand: $serviceMakerCommand,
         );
-
     }
 
     protected function withContract(string $serviceName, Command $serviceMakerCommand): void
