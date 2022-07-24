@@ -42,6 +42,6 @@ class LaravelServiceMakerCommand extends Command
 
         $this->comment('Service files created with success!');
 
-        return self::SUCCESS;
+        return 1;
     }
 }
