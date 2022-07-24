@@ -3,8 +3,8 @@
 namespace NordCoders\LaravelServiceMaker\Commands;
 
 use Illuminate\Console\Command;
-use NordCoders\LaravelServiceMaker\Contracts\CreateServiceFileActionContract;
 use NordCoders\LaravelServiceMaker\Contracts\CreateServiceContractFileActionContract;
+use NordCoders\LaravelServiceMaker\Contracts\CreateServiceFileActionContract;
 
 class LaravelServiceMakerCommand extends Command
 {
@@ -26,8 +26,7 @@ class LaravelServiceMakerCommand extends Command
     public function handle(
         CreateServiceFileActionContract $createServiceFileAction,
         CreateServiceContractFileActionContract $createServiceContractFileAction
-    ): int
-    {
+    ): int {
         $createServiceFileAction->handle(
             serviceName: $this->argument('name'),
             noContract: $this->option('noContract'),
