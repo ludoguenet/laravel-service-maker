@@ -3,11 +3,11 @@
 use function Pest\Laravel\artisan;
 
 it('returns a successful response when make:service command is executed without option', function () {
-    artisan('make:service CreateUser')->assertExitCode(1);
+    artisan('make:service CreateUser')->assertExitCode(0);
 });
 
 it('returns a successful response when make:service command is executed with option', function () {
-    artisan('make:service CreateUser --noContract')->assertExitCode(1);
+    artisan('make:service CreateUser --noContract')->assertExitCode(0);
 });
 
 it('is successful when make:servicecontractfile command is executed', function () {
