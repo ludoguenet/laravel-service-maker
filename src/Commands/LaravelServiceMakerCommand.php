@@ -8,7 +8,6 @@ use Illuminate\Console\Command;
 use Illuminate\Support\Str;
 use NordCoders\LaravelServiceMaker\Contracts\CreateServiceContractFileActionContract;
 use NordCoders\LaravelServiceMaker\Contracts\CreateServiceFileActionContract;
-use Symfony\Component\Console\Input\InputOption;
 
 final class LaravelServiceMakerCommand extends Command
 {
@@ -17,7 +16,7 @@ final class LaravelServiceMakerCommand extends Command
      */
     protected $signature = 'make:service
     {name : The name of the service you want to create}
-    {--noContract : Create a service without contract}
+    {--N|noContract : Create a service without contract}
     ';
 
     /**

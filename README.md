@@ -34,8 +34,6 @@ For example, the command `php artisan make:service createUser` will generate a s
 
 It will also generate an interface (contract) called `CreateUserContract.php` located in `app/Services/Contracts`.
 
-Adding a ```--noContract``` option will prevent the service from implementing any contract and will not create any contract file.
-
 ### Create services for models
 
 Adding a ```--service``` or ```-S``` option is available when creating a model.
@@ -44,9 +42,9 @@ For example, the command `php artisan make:model Book --service` or `php artisan
 
 The commande `php artisan make:model Book --all` or `php artisan make:model Book -a` will also geenrate a model, migration, factory, seeder, policy, controller, form requests and service.
 
-Adding a ```--noContract``` or ```-N``` option will prevent the model service from implementing any contract and will not create any contract file.
-
 ### Contracts
+
+Adding a ```--noContract``` or ```-N``` option will prevent the command from implementing any contract and will not create any contract file.
 
 If you never need any contracts. Then turn the **with_interface** value to false in the config file.
 
