@@ -40,7 +40,7 @@ Adding a ```--service``` or ```-S``` option is available when creating a model.
 
 For example, the command `php artisan make:model Book --service` or `php artisan make:model Book -S` will generate a model with service too.
 
-The commande `php artisan make:model Book --all` or `php artisan make:model Book -a` will also geenrate a model, migration, factory, seeder, policy, controller, form requests and service.
+The command `php artisan make:model Book --all` or `php artisan make:model Book -a` will also geenrate a model, migration, factory, seeder, policy, controller, form requests and service.
 
 ### Contracts
 
