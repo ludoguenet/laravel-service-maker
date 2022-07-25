@@ -15,6 +15,13 @@ final class CreateServiceContractCommand extends GeneratorCommand
     protected $name = 'make:servicecontractfile';
 
     /**
+     * The type of class being generated.
+     *
+     * @var string
+     */
+    protected $type = 'Contract';
+
+    /**
      * @return string
      */
     protected function getStub(): string
