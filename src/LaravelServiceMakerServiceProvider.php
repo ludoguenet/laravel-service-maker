@@ -1,10 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace NordCoders\LaravelServiceMaker;
 
 use NordCoders\LaravelServiceMaker\Actions\CreateServiceContractFileAction;
 use NordCoders\LaravelServiceMaker\Actions\CreateServiceFileAction;
 use NordCoders\LaravelServiceMaker\Commands\Files\Contract\CreateServiceContractCommand;
+use NordCoders\LaravelServiceMaker\Commands\Files\Migration\CreateServiceMigrationCommand;
 use NordCoders\LaravelServiceMaker\Commands\Files\Service\CreateServiceFileCommand;
 use NordCoders\LaravelServiceMaker\Commands\Files\Service\CreateServiceFileWithNoContractCommand;
 use NordCoders\LaravelServiceMaker\Commands\LaravelServiceMakerCommand;
@@ -13,7 +16,7 @@ use NordCoders\LaravelServiceMaker\Contracts\CreateServiceFileActionContract;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
-class LaravelServiceMakerServiceProvider extends PackageServiceProvider
+final class LaravelServiceMakerServiceProvider extends PackageServiceProvider
 {
     public array $bindings = [
         CreateServiceFileActionContract::class => CreateServiceFileAction::class,
@@ -28,6 +31,7 @@ class LaravelServiceMakerServiceProvider extends PackageServiceProvider
             ->hasCommand(LaravelServiceMakerCommand::class)
             ->hasCommand(CreateServiceFileCommand::class)
             ->hasCommand(CreateServiceFileWithNoContractCommand::class)
-            ->hasCommand(CreateServiceContractCommand::class);
+            ->hasCommand(CreateServiceContractCommand::class)
+            ->hasCommand(CreateServiceMigrationCommand::class);
     }
 }

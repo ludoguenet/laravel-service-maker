@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace NordCoders\LaravelServiceMaker\Commands\Files\Contract;
 
 use Illuminate\Console\GeneratorCommand;

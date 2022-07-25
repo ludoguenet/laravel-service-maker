@@ -7,11 +7,11 @@ namespace NordCoders\LaravelServiceMaker\Actions;
 use Illuminate\Console\Command;
 use NordCoders\LaravelServiceMaker\Contracts\CreateServiceFileActionContract;
 
-class CreateServiceFileAction implements CreateServiceFileActionContract
+final class CreateServiceFileAction implements CreateServiceFileActionContract
 {
     public function handle(
         string $serviceName,
-        string $noContract,
+        string|bool $noContract,
         Command $serviceMakerCommand,
     ): void {
         if ($noContract) {

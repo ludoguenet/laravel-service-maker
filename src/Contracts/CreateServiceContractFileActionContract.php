@@ -10,7 +10,7 @@ interface CreateServiceContractFileActionContract
 {
     public function handle(
         string $serviceName,
-        string $noContract,
+        string|bool $noContract,
         Command $serviceMakerCommand
     ): void;
 }
