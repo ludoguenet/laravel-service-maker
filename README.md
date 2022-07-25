@@ -14,7 +14,7 @@
 
 ## What does it do?
 
-This package adds a new `php artisan make:service {name} {--noContract}` command. It will create a service file and its contract (interface) for saving time while working with Laravel Framework.
+This package adds a new `php artisan make:service {name} {--N|noContract}` command. It will create a service file and its contract (interface) for saving time while working with Laravel Framework and benefit from the **Service Pattern**.
 
 ## Installation
 
@@ -26,27 +26,27 @@ composer require nordcoders/laravel-service-maker
 
 ## How does it work?
 
-After installation, the command `php artisan make:service {name} {--noContract}` will be available.
+After installation, the command `php artisan make:service {name} {--N|noContract}` will be available.
 
 ### Create services files
 
-For example, the command `php artisan make:service createUser` will generate a service file `CreateUserService.php` located in `app/Services/CreateUser`.
+For example, the command `php artisan make:service createUser` will generate a service file called `CreateUserService.php` located in `app/Services/CreateUser`.
 
 It will also generate an interface (contract) called `CreateUserContract.php` located in `app/Services/Contracts`.
 
 ### Create services for models
 
-Adding a ```--service``` or ```-S``` option is available when creating a model.
+Adding a ```--service``` or ```-S``` option is now available when creating a model.
 
 For example, the command `php artisan make:model Book --service` or `php artisan make:model Book -S` will generate a model with service too.
 
-The command `php artisan make:model Book --all` or `php artisan make:model Book -a` will also geenrate a model, migration, factory, seeder, policy, controller, form requests and service.
+The command `php artisan make:model Book --all` or `php artisan make:model Book -a` will now generate a model, migration, factory, seeder, policy, controller, form requests and service.
 
 ### Contracts
 
-Adding a ```--noContract``` or ```-N``` option will prevent the command from implementing any contract and will not create any contract file.
+Adding a ```--noContract``` or ```-N``` option will prevent the commands from implementing any contract and will not create any contract file.
 
-If you never need any contracts. Then turn the **with_interface** value to false in the config file.
+If you never need any contracts. Publish the config file and then turn the **with_interface** value to false in the config file.
 
 ## Configuration file
 
