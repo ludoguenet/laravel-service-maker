@@ -1,6 +1,6 @@
 {
     "name": "nordcoders/laravel-service-maker",
-    "description": "Generate automatically services and their interface to make your Controllers thin.",
+    "description": "Generate services and contracts in Laravel with the artisan command",
     "keywords": [
         "nordcoders",
         "laravel",
