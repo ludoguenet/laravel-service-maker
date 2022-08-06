@@ -21,7 +21,7 @@ This package adds a new `php artisan make:service {name} {--N|noContract}` comma
 You can install the package via composer:
 
 ```bash
-composer require nordcoders/laravel-service-maker
+composer require nordcoders/laravel-service-maker --dev
 ```
 
 ## How does it work?
